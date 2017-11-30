@@ -1,0 +1,19 @@
+h1{
+    color: black;
+    text-shadow: none;
+}
+
+div #contact{
+    border-color: black;
+    border: medium;
+}
+
+div #viewListPlayers{
+    text-align: center;
+}
+
+#JSbackAbout{
+    background-color: dimgray;
+    text-shadow: none;
+    color: white;
+}

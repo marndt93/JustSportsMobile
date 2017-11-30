@@ -1,0 +1,408 @@
+<!--
+Mobile web development
+Created by: Natalie Martin and Matt Arndt
+Date: February 15, 2017
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NM Feedback Assignment</title>
+    <!--jQuery-->
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <!--jQuery Mobile-->
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <script src="js/lib/jquery.validate.js"></script>
+    <!--Validation-->
+    <script src="js/JustSportsdatabase.js"></script>
+    <script src="js/JustSportsfeedbackDAL.js"></script>
+    <script src="js/JustSportsglobal.js"></script>
+    <script src="js/JustSportsutil.js"></script>
+    <script src="js/JustSportsfacade.js"></script>
+    <!--jQuery mobile style-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+</head>
+<body>
+
+<div id="JSHome" data-role="page">
+    <header data-role="header" style="background-color: brown;text-shadow: none; color: black" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #0088bb; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #aaaaaa; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #aaaaaa; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <h2 align="center" style="font-weight: bold; ">Welcome to Just Sports!</h2>
+        <p align="center">
+            <img src="img/logo.png" width="30%" height="30%">
+        </p>
+        <p style="font-style: italic; font-weight: bolder">Summer camps are now avaliable!</p>
+        <p>There is a sport for everyone. Check out the sports that are avaliable for sign up under our sports tab.</p>
+        <p>Meet new friends! Have Fun!</p>
+        <p>Who new being healthy was so easy and fun!</p>
+        <p style="font-weight: bold">Sign up is avaliable up until May 15th. Most of the sport camps run from the beginning of June until the
+            end of August</p>
+        <p>You can easily sign up  through our sign-up</p>
+        <p>Had an amazing experience with Just Sports? Why not provide a review? We would love to hear your feedback!</p>
+    </section>
+    <footer data-role="footer" style="background-color: brown; text-shadow: none; color: black" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin and Matt Arndt</h1>
+    </footer>
+</div>
+
+<div id="JSAbout" data-role="page">
+    <header data-role="header" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #aaaaaa; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #0088bb; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #aaaaaa; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #aaaaaa; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <h1 style="font-weight: bolder; text-align: center">About Just Sports</h1>
+        <p style="text-align: center">We are a sport organization that strives to improve the health of individuals by providing
+        excellent sport camps for all ages whether they are a child, teenager, or adult. There are multiple
+        sports that are avaliable.</p>
+        <p>Our goal is to meet the needs of our community in a fun and exciting way. To allow people to play sports
+        throughout the year and to bring the community together in a healthy and slightly competitive way.</p>
+
+        <div id=contact" style="background-color: white; text-align: center">
+            <h1 style="font-weight: bold; font-style: italic">About the Developers:</h1>
+            <p>Natalie Martin: 6435895</p>
+            <p>Matt Arndt: 7082024</p>
+            <p>Conestoga College Program: Computer Program</p>
+            <div style="text-align: center; background-color: gainsboro">
+            <h1 style="font-weight: bold; font-style: italic">Contact Information</h1>
+            <p>Phone: 519-232-3451</p>
+            <p>Email: justSportsCamp@gmail.com</p>
+        </div>
+        </div>
+
+        <p>Find out what sports are avaliable below!</p>
+        <button type="button" id="JStoSports" name="JStoSports"
+                data-inline="true" style="background-color: dimgrey; text-shadow: none; color: white">Click Here!
+        </button>
+
+    </section>
+    <footer data-role="footer" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin</h1>
+    </footer>
+</div>
+
+<div id="JSSports" data-role="page">
+    <header data-role="header" style="background-color: brown; color: black" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #aaaaaa; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #0088bb; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #aaaaaa; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #aaaaaa; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <h1 style="text-align: center">Sports that are Avaliable</h1>
+        <table>
+            <tr>
+                <td>Soccer</td>
+                <td><img src="img/soccer.png" width="250px"></td>
+                <td>One of our most popular sports camps. We have 3 different leagues; minor, teenager, adult. These sport
+                    camps run from June 1st - September 28 on Thursdays at 6:00pm</td>
+            </tr>
+            <tr>
+                <td>Baseball</td>
+                <td><img src="img/baseball.png" width="250px"></td>
+                <td>This is also a very popular sport camp. These camps run on Tuesdays at 6:00pm and run from June 20th -
+                    August 29th. The teams consist of 15 people</td>
+            </tr>
+            <tr>
+                <td>Flag Football</td>
+                <td><img src="img/football.png" width="250px"></td>
+                <td>Football camps are on Saturday morning 9:00am starting June 3rd and ends September 2nd</td>
+            </tr>
+            <tr>
+                <td>Basketball</td>
+                <td><img src="img/basketball.png" width="250px"></td>
+                <td>Basketball camps are both winter and summer camps. Summer camps are on Wednesdays at 6:00pm and start
+                    on June 7th and ends August 30th</td>
+            </tr>
+            <tr>
+                <td>Volleyball</td>
+                <td><img src="img/volleyball.jpg" width="250px"></td>
+                <td>Teams consist of 10 people. These camps run on Monday nights at 6:00pm and starts June 5th and ends
+                    August 28th</td>
+            </tr>
+            <tr>
+                <td>Hockey</td>
+                <td><img src="img/hockey.jpg" width="250px"></td>
+                <td>One of our most popular winter sports camps. There are camps from all ages two different times per winter.
+                    Dates are to be announced in September</td>
+            </tr>
+        </table>
+
+        <button type="button" data-inline="true" id="JSbackAbout">Back</button>
+    </section>
+    <footer data-role="footer" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin</h1>
+    </footer>
+</div>
+
+
+<div id="JSSignUp" data-role="page">
+    <header data-role="header" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #aaaaaa; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #0088bb; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #aaaaaa; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <h1 style="text-align: center">Sign-Up</h1>
+        <div id="viewListPlayers">
+            <p>Click the button to see the list of players</p>
+            <button type="button" id="JSgetList" name="JSgetList"
+                    data-inline="true" style="background-color: dimgrey; text-shadow: none; color: white">Click Here
+            </button>
+        </div>
+
+        <div>
+            <form id="JSsignUpForm" name="JSsignUpForm">
+                <label for="JSFullName">Full Name:</label>
+                <input type="text" id="JSFullName" name="JSFullName">
+                <label for="JSAddress">Address</label>
+                <input type="text" id="JSAddress" name="JSAddress">
+                <label for="JSPhoneNumber">Phone Number</label>
+                <input type="text" id="JSPhoneNumber" name="JSPhoneNumber">
+                <label for="JSCity">City</label>
+                <input type="text" id="JSCity" name="JSCity">
+                <label for="JSPostalCode">Postal Code</label>
+                <input type="text" id="JSPostalCode" name="JSPostalCode">
+                <label for="JSProvince">Province</label>
+                <input type="text" id="JSProvince" name="JSProvince">
+                <label for="JSCountry">Country</label>
+                <input type="text" id="JSCountry" name="JSCountry">
+                <label for="DoB">Date of Birth</label>
+                <input type="date" id="DoB" name="DoB">
+                <label for="JScamp">Sports Camp</label>
+                <select id="JScamp">
+                    <option value="Soccer">Soccer</option>
+                    <option value="Baseball">Baseball</option>
+                    <option value="Football">Football</option>
+                    <option value="VolleyBall">VolleyBall</option>
+                    <option value="BasketBall">BasketBall</option>
+                </select>
+                <label for="JSmediacal">Medical Information (Allergies, Diabetic, etc)</label>
+                <input type="text" id="JSmediacal" name="JSmedical">
+                <button type="button" id="JSsignUp" name="JSsignUp"
+                        data-inline="true" style="background-color: dimgrey; align-self: center; text-shadow: none; color: white">Sign-Up
+                </button>
+            </form>
+        </div>
+    </section>
+    <footer data-role="footer" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin</h1>
+    </footer>
+</div>
+
+<div id="JSPlayers" data-role="page">
+    <header data-role="header" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #aaaaaa; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #aaaaaa; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #aaaaaa; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <h1 style="text-align: center">List of Players</h1>
+        <ul id="JSseePlayerInfo" data-role="listview">
+
+        </ul>
+    </section>
+    <footer data-role="footer" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin</h1>
+    </footer>
+</div>
+
+<div id="JSSeePlayer" data-role="page">
+    <header data-role="header" style="background-color: brown; text-shadow: none; color: black" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #aaaaaa; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #0088bb; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #aaaaaa; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+            <h1 style="text-align: center">Player Information</h1>
+        <form id="JSShowPlayer" name="JSShowPlayer">
+            <label for="JSFullNameShow">Full Name:</label>
+            <input type="text" id="JSFullNameShow" name="JSFullName">
+            <label for="JSAddressShow">Address</label>
+            <input type="text" id="JSAddressShow" name="JSAddress">
+            <label for="JSPhoneNumberShow">Phone Number</label>
+            <input type="text" id="JSPhoneNumberShow" name="JSPhoneNumber">
+            <label for="JSCityShow">City</label>
+            <input type="text" id="JSCityShow" name="JSCity">
+            <label for="JSPostalCodeShow">Postal Code</label>
+            <input type="text" id="JSPostalCodeShow" name="JSPostalCode">
+            <label for="JSProvinceShow">Province</label>
+            <input type="text" id="JSProvinceShow" name="JSProvince">
+            <label for="JSCountryShow">Country</label>
+            <input type="text" id="JSCountryShow" name="JSCountry">
+            <label for="DoBShow">Date of Birth</label>
+            <input type="date" id="DoBShow" name="DoB">
+            <label for="JScampShow">Sports Camp</label>
+            <select id="JScampShow">
+                <option value="Soccer">Soccer</option>
+                <option value="Baseball">Baseball</option>
+                <option value="Football">Football</option>
+                <option value="VolleyBall">VolleyBall</option>
+                <option value="BasketBall">BasketBall</option>
+            </select>
+            <label for="JSmediacalShow">Medical Information (Allergies, Diabetic, etc)</label>
+            <input type="text" id="JSmediacalShow" name="JSmedicalShow">
+        </form>
+        <div data-role="controlgroup" data-type="horizontal">
+            <button type="button" id="JSupdate" name="JSupdate"
+                    data-inline="true" style="text-shadow: none; background-color: #0088bb">Update
+            </button>
+            <button type="button" id="JSDelete" name="JSDelete"
+                    data-inline="true" style="text-shadow: none; background-color: brown">Delete
+            </button>
+            <button type="button" id="JSCancel" name="JSCancel"
+                    data-inline="true" style="text-shadow: none; background-color: dimgray">Cancel
+            </button>
+        </div>
+    </section>
+    <footer data-role="footer" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin</h1>
+    </footer>
+</div>
+
+<div id="JSReviews" data-role="page">
+    <header data-role="header" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #aaaaaa; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #aaaaaa; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #0088bb; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #aaaaaa; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <h1 style="text-align: center">Give us a Review!</h1>
+        <form id="JSReviewInput" method="post">
+            <label for="JSreviewName">Name:</label>
+            <input type="text" id="JSreviewName" name="JSreviewName">
+            <label for="JSComment">Review</label>
+            <input type="text" id="JSComment" name="JSComment">
+            <label for="JSRate">Rating (1 -5: 5 is the highest):</label>
+            <input type="number" id="JSRate" name="JSRate">
+            <input type="button" id="JSSubmit" value="JSSubmit" data-inline="true" style="background-color: dimgrey; color: white; text-shadow:none">
+
+        </form>
+        <h1 style="text-align: center">List of Reviews</h1>
+        <ul id="JSReviewList" data-role="listview">
+
+        </ul>
+    </section>
+    <footer data-role="footer" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin</h1>
+    </footer>
+</div>
+
+<div id="JSSeeReviews" data-role="page">
+    <header data-role="header" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #aaaaaa; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #aaaaaa; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #0088bb; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #aaaaaa; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <form id="JSReviewShow" name="JSReviewShow">
+                <label for="JSreviewNameShow">Name:</label>
+                <input type="text" id="JSreviewNameShow" name="JSreviewName">
+                <label for="JSCommentShow">Review</label>
+                <input type="text" id="JSCommentShow" name="JSComment">
+                <label for="JSRateShow">Rating (1 -5: 5 is the highest):</label>
+                <input type="number" id="JSRateShow" name="JSRate">
+                <button type="button" id="JSBackReview" name="JSBackReview"
+                        data-inline="true" style="background-color: dimgrey; text-shadow: none">Back to Reviews
+                </button>
+        </form>
+    </section>
+    <footer data-role="footer" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin</h1>
+    </footer>
+</div>
+
+<div id="JSSettings" data-role="page">
+    <header data-role="header" style="background-color: brown; color: black; text-shadow: none" data-position="fixed">
+        <h1>Just Sports</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#JSHome" data-icon="home" style="background-color: #aaaaaa; text-shadow: none">Home</a></li>
+                <li><a href="#JSAbout"  data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">About</a></li>
+                <li><a href="#JSSignUp" data-icon="plus" style="background-color: #aaaaaa; text-shadow: none">Sign-Up</a></li>
+                <li><a href="#JSReviews" data-icon="grid" style="background-color: #aaaaaa; text-shadow: none">Reviews</a></li>
+                <li><a href="#JSSettings" data-icon="gear" style="background-color: #0088bb; text-shadow: none">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <h1 style="text-align: center">Settings</h1>
+        <form id="saveEmail" name="saveEmail">
+            <label for="JSemail">Default Email:</label>
+            <input type="email" id="JSemail" name="JSemail" value="">
+            <button type="button" id="JSsaveDefaults" name="JSsaveDefaults"
+                    style="background-color: dimgray; color: white; text-shadow: none">Save Defaults
+            </button>
+            <button type="button" id="JSClearDatabase" name="JSClearDatabase"
+                    style="background-color: dimgray; color: white; text-shadow: none">Clear Database
+            </button>
+        </form>
+    </section>
+    <footer data-role="footer" style="background-color: brown; color: black" data-position="fixed">
+        <h1>&copy; 2017 Natalie Martin</h1>
+    </footer>
+</div>
+</body>
+</html>
